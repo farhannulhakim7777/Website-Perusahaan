@@ -1,0 +1,371 @@
+/* ============================================
+   TYPOGRAPHY SYSTEM
+   Professional, readable, modern typography
+   ============================================ */
+
+/* ============================================
+   BASE TYPOGRAPHY
+   ============================================ */
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-800);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+.heading {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+.heading--display {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-none);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.heading--h1 {
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.heading--h2 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.heading--h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+.heading--h4 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.heading--h5 {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.heading--h6 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+/* ============================================
+   SECTION HEADINGS
+   ============================================ */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.section-heading__title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading__title::after {
+  content: '';
+  position: absolute;
+  bottom: calc(var(--spacing-2) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+}
+
+.section-heading__subtitle {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  color: var(--color-gray-600);
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+
+/* ============================================
+   BODY TEXT
+   ============================================ */
+
+.text {
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-700);
+}
+
+.text--lead {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-800);
+}
+
+.text--large {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  line-height: var(--line-height-relaxed);
+}
+
+.text--small {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.text--muted {
+  color: var(--color-gray-500);
+}
+
+.text--primary {
+  color: var(--color-primary);
+}
+
+.text--secondary {
+  color: var(--color-secondary);
+}
+
+/* ============================================
+   FONT WEIGHTS
+   ============================================ */
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* ============================================
+   LETTER SPACING
+   ============================================ */
+
+.tracking-tighter {
+  letter-spacing: var(--letter-spacing-tighter);
+}
+
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-normal {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.tracking-wider {
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.tracking-widest {
+  letter-spacing: var(--letter-spacing-widest);
+}
+
+/* ============================================
+   LINE HEIGHT
+   ============================================ */
+
+.leading-none {
+  line-height: var(--line-height-none);
+}
+
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-snug {
+  line-height: var(--line-height-snug);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--line-height-loose);
+}
+
+/* ============================================
+   TEXT ALIGNMENT
+   ============================================ */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* ============================================
+   TEXT TRANSFORM
+   ============================================ */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* ============================================
+   TEXT DECORATION
+   ============================================ */
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 768px) {
+  .heading--display {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    line-height: var(--line-height-tight);
+  }
+
+  .heading--h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+  }
+
+  .heading--h2 {
+    font-size: clamp(1.25rem, 4vw, 1.875rem);
+  }
+
+  .heading--h3 {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  }
+
+  .heading--h4 {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+
+  .section-heading__title {
+    font-size: clamp(1.25rem, 4vw, 1.875rem);
+  }
+
+  .section-heading__subtitle {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .text--lead {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .text--large {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading--display {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: var(--line-height-tight);
+  }
+
+  .heading--h1 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .heading--h2 {
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+  }
+
+  .heading--h3 {
+    font-size: clamp(1rem, 3.5vw, 1.125rem);
+  }
+
+  .heading--h4 {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+
+  .section-heading__title {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .section-heading__subtitle {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .text--lead {
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  }
+
+  .text--large {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .text {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+}

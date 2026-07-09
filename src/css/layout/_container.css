@@ -1,0 +1,111 @@
+/* ============================================
+   CONTAINER LAYOUT
+   Responsive container system
+   ============================================ */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+.container--xs {
+  max-width: var(--container-xs);
+}
+
+.container--sm {
+  max-width: var(--container-sm);
+}
+
+.container--md {
+  max-width: var(--container-md);
+}
+
+.container--lg {
+  max-width: var(--container-lg);
+}
+
+.container--xl {
+  max-width: var(--container-xl);
+}
+
+.container--2xl {
+  max-width: var(--container-2xl);
+}
+
+.container--3xl {
+  max-width: var(--container-3xl);
+}
+
+.container--4xl {
+  max-width: var(--container-4xl);
+}
+
+.container--5xl {
+  max-width: var(--container-5xl);
+}
+
+.container--6xl {
+  max-width: var(--container-6xl);
+}
+
+.container--7xl {
+  max-width: var(--container-7xl);
+}
+
+.container--full {
+  max-width: var(--container-full);
+}
+
+.container--content {
+  max-width: var(--max-width-content);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+/* ============================================
+   RESPONSIVE CONTAINERS
+   ============================================ */
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: var(--spacing-10);
+    padding-right: var(--spacing-10);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding-left: var(--spacing-2);
+    padding-right: var(--spacing-2);
+  }
+}

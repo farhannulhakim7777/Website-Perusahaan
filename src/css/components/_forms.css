@@ -1,0 +1,392 @@
+/* ============================================
+   FORM COMPONENTS
+   Professional, accessible form elements
+   ============================================ */
+
+/* ============================================
+   BASE FORM
+   ============================================ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.form--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--spacing-4);
+}
+
+.form--horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+}
+
+/* ============================================
+   FORM GROUP
+   ============================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.form-group--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.form-group--inline .form-label {
+  margin-bottom: 0;
+  min-width: 120px;
+}
+
+/* ============================================
+   FORM LABEL
+   ============================================ */
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-2);
+  display: block;
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+.form-label--error {
+  color: var(--color-error);
+}
+
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--form-input-padding-y) var(--form-input-padding-x);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
+  border: 1px solid var(--form-input-border-color);
+  border-radius: var(--form-input-border-radius);
+  transition: all var(--transition-fast) var(--transition-timing);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--form-input-focus-ring);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-gray-400);
+}
+
+.form-input:disabled,
+.form-textarea:disabled,
+.form-select:disabled {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-input--error,
+.form-textarea--error,
+.form-select--error {
+  border-color: var(--color-error);
+}
+
+.form-input--error:focus,
+.form-textarea--error:focus,
+.form-select--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input--success,
+.form-textarea--success,
+.form-select--success {
+  border-color: var(--color-success);
+}
+
+.form-input--success:focus,
+.form-textarea--success:focus,
+.form-select--success:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* ============================================
+   FORM TEXTAREA
+   ============================================ */
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-textarea--sm {
+  min-height: 80px;
+}
+
+.form-textarea--lg {
+  min-height: 200px;
+}
+
+/* ============================================
+   FORM SELECT
+   ============================================ */
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 1rem;
+  padding-right: var(--spacing-10);
+}
+
+/* ============================================
+   FORM CHECKBOX & RADIO
+   ============================================ */
+
+.form-checkbox,
+.form-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  cursor: pointer;
+}
+
+.form-checkbox input,
+.form-radio input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.form-checkbox label,
+.form-radio label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+}
+
+/* ============================================
+   FORM HELP TEXT
+   ============================================ */
+
+.form-help {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  margin-top: var(--spacing-1);
+}
+
+.form-help--error {
+  color: var(--color-error);
+}
+
+/* ============================================
+   FORM ERROR MESSAGE
+   ============================================ */
+
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-top: var(--spacing-1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.form-error::before {
+  content: '⚠';
+  font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   FORM ACTIONS
+   ============================================ */
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.form-actions--right {
+  justify-content: flex-end;
+}
+
+.form-actions--center {
+  justify-content: center;
+}
+
+/* ============================================
+   SEARCH INPUT
+   ============================================ */
+
+.form-search {
+  position: relative;
+}
+
+.form-search input {
+  padding-left: var(--spacing-10);
+}
+
+.form-search::before {
+  content: '';
+  position: absolute;
+  left: var(--spacing-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ============================================
+   FILE INPUT
+   ============================================ */
+
+.form-file {
+  position: relative;
+  display: inline-block;
+}
+
+.form-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-6);
+  background-color: var(--color-gray-100);
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--transition-timing);
+}
+
+.form-file-label:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+/* ============================================
+   RESPONSIVE FORMS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .form {
+    gap: var(--spacing-4);
+  }
+
+  .form--inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form--horizontal {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .form-group {
+    gap: var(--spacing-1);
+  }
+
+  .form-group--inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+
+  .form-group--inline .form-label {
+    min-width: auto;
+  }
+
+  .form-label {
+    font-size: var(--font-size-sm);
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    gap: var(--spacing-3);
+  }
+
+  .form-group {
+    gap: var(--spacing-1);
+  }
+
+  .form-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-2);
+  }
+
+  .form-textarea {
+    min-height: 80px;
+  }
+
+  .form-help,
+  .form-error {
+    font-size: 0.7rem;
+  }
+
+  .form-actions {
+    gap: var(--spacing-2);
+  }
+}

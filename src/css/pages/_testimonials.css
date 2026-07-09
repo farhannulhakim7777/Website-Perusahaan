@@ -1,0 +1,127 @@
+/* ============================================
+   TESTIMONIALS SECTION STYLES
+   Customer testimonials with ratings
+   ============================================ */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
+}
+
+.card--testimonial {
+  background: var(--color-white);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal) var(--transition-timing);
+  border: 1px solid var(--color-gray-100);
+}
+
+.card--testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial__rating {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  color: #fbbf24;
+}
+
+.testimonial__text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-6);
+  font-style: italic;
+}
+
+.testimonial__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.testimonial__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.testimonial__role {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+/* Responsive Testimonials */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .card--testimonial {
+    padding: var(--spacing-6);
+  }
+
+  .testimonial__text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-grid {
+    gap: var(--spacing-4);
+  }
+
+  .card--testimonial {
+    padding: var(--spacing-5);
+  }
+
+  .testimonial__rating svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .testimonial__name {
+    font-size: var(--font-size-base);
+  }
+
+  .testimonial__role {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 375px) {
+  .testimonials-grid {
+    gap: var(--spacing-3);
+  }
+
+  .card--testimonial {
+    padding: var(--spacing-4);
+  }
+
+  .testimonial__rating {
+    gap: var(--spacing-1);
+  }
+
+  .testimonial__rating svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .testimonial__text {
+    font-size: 0.8rem;
+  }
+
+  .testimonial__name {
+    font-size: var(--font-size-sm);
+  }
+
+  .testimonial__role {
+    font-size: 0.7rem;
+  }
+}

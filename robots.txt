@@ -1,0 +1,15 @@
+# Robots.txt for PT Visi Agro Makmur Website
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Disallow specific directories if any
+# Disallow: /private/
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://visiagromakmur.com/sitemap.xml
+
+# Crawl delay (optional)
+# Crawl-delay: 1

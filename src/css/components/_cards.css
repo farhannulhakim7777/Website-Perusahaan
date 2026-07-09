@@ -1,0 +1,482 @@
+/* ============================================
+   CARD COMPONENTS
+   Premium, modern card designs
+   ============================================ */
+
+/* ============================================
+   BASE CARD
+   ============================================ */
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  transition: all var(--transition-normal) var(--transition-timing);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   CARD VARIANTS
+   ============================================ */
+
+.card--elevated {
+  box-shadow: var(--shadow-lg);
+}
+
+.card--elevated:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.card--flat {
+  box-shadow: none;
+  border: 1px solid var(--color-gray-200);
+}
+
+.card--flat:hover {
+  border-color: var(--color-primary);
+}
+
+.card--outlined {
+  background-color: transparent;
+  border: 2px solid var(--color-gray-200);
+  box-shadow: none;
+}
+
+.card--outlined:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+/* ============================================
+   CARD WITH IMAGE
+   ============================================ */
+
+.card--with-image {
+  padding: 0;
+}
+
+.card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+
+.card__content {
+  padding: var(--card-padding);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-900);
+}
+
+.card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-relaxed);
+}
+
+.card__footer {
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================
+   PRODUCT CARD
+   ============================================ */
+
+.card--product {
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal) var(--transition-timing);
+}
+
+.card--product:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+.card--product .card__image {
+  height: 180px;
+  padding: var(--spacing-4);
+  background-color: var(--color-gray-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--product .card__image img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.card--product .card__content {
+  padding: var(--spacing-6);
+}
+
+.card--product .card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+}
+
+.card--product .card__badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-2);
+}
+
+/* ============================================
+   SERVICE CARD
+   ============================================ */
+
+.card--service {
+  text-align: center;
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  border: 1px solid var(--color-gray-100);
+}
+
+.card--service:hover {
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-primary-50) 100%);
+  border-color: var(--color-primary);
+}
+
+.card--service .card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-100);
+  border-radius: var(--radius-2xl);
+  color: var(--color-primary);
+}
+
+.card--service .card__icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.card--service .card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-900);
+}
+
+.card--service .card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   FEATURE CARD
+   ============================================ */
+
+.card--feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.card--feature .card__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary-100);
+  border-radius: var(--radius-xl);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.card--feature .card__icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.card--feature .card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+}
+
+.card--feature .card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   TESTIMONIAL CARD
+   ============================================ */
+
+.card--testimonial {
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-white) 100%);
+  border: 1px solid var(--color-primary-200);
+}
+
+.card--testimonial .card__quote {
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+  position: relative;
+}
+
+.card--testimonial .card__quote::before {
+  content: '"';
+  font-size: var(--font-size-6xl);
+  color: var(--color-primary-300);
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-family: Georgia, serif;
+}
+
+.card--testimonial .card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.card--testimonial .card__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.card--testimonial .card__author-info {
+  flex: 1;
+}
+
+.card--testimonial .card__author-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.card--testimonial .card__author-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+/* ============================================
+   STATS CARD
+   ============================================ */
+
+.card--stats {
+  text-align: center;
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.card--stats .card__number {
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-heading);
+}
+
+.card--stats .card__label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  opacity: 0.9;
+}
+
+/* ============================================
+   RESPONSIVE CARDS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--spacing-6);
+  }
+
+  .card--product .card__image {
+    height: 150px;
+  }
+
+  .card--product .card__content {
+    padding: var(--spacing-4);
+  }
+
+  .card--service {
+    padding: var(--spacing-6);
+  }
+
+  .card--feature {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card--stats .card__number {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--spacing-4);
+  }
+
+  .card--product .card__image {
+    height: 120px;
+    padding: var(--spacing-2);
+  }
+
+  .card--product .card__content {
+    padding: var(--spacing-3);
+  }
+
+  .card--product .card__title {
+    font-size: var(--font-size-base);
+  }
+
+  .card--product .card__description {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--service {
+    padding: var(--spacing-4);
+  }
+
+  .card--service .card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card--service .card__icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card--service .card__title {
+    font-size: var(--font-size-base);
+  }
+
+  .card--service .card__description {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--feature .card__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card--feature .card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card--feature .card__title {
+    font-size: var(--font-size-base);
+  }
+
+  .card--feature .card__description {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--stats .card__number {
+    font-size: var(--font-size-3xl);
+  }
+
+  .card--stats .card__label {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    padding: var(--spacing-3);
+  }
+
+  .card--product .card__image {
+    height: 100px;
+    padding: var(--spacing-2);
+  }
+
+  .card--product .card__content {
+    padding: var(--spacing-2);
+  }
+
+  .card--product .card__title {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--product .card__description {
+    font-size: 0.75rem;
+  }
+
+  .card--service {
+    padding: var(--spacing-3);
+  }
+
+  .card--service .card__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card--service .card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card--service .card__title {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--service .card__description {
+    font-size: 0.75rem;
+  }
+
+  .card--feature .card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .card--feature .card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card--feature .card__title {
+    font-size: var(--font-size-sm);
+  }
+
+  .card--feature .card__description {
+    font-size: 0.75rem;
+  }
+}

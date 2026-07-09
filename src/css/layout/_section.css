@@ -1,0 +1,162 @@
+/* ============================================
+   SECTION LAYOUT
+   Section spacing and structure
+   ============================================ */
+
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section--sm {
+  padding-top: var(--section-padding-y-sm);
+  padding-bottom: var(--section-padding-y-sm);
+}
+
+.section--lg {
+  padding-top: var(--spacing-24);
+  padding-bottom: var(--spacing-24);
+}
+
+.section--xl {
+  padding-top: var(--spacing-32);
+  padding-bottom: var(--spacing-32);
+}
+
+.section--no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section--no-padding-top {
+  padding-top: 0;
+}
+
+.section--no-padding-bottom {
+  padding-bottom: 0;
+}
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+
+.section--white {
+  background-color: var(--color-white);
+}
+
+.section--gray {
+  background-color: var(--color-gray-50);
+}
+
+.section--gray-dark {
+  background-color: var(--color-gray-100);
+}
+
+.section--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--primary .section-heading__title,
+.section--primary .section-heading__subtitle,
+.section--primary .heading,
+.section--primary .text {
+  color: var(--color-white);
+}
+
+.section--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.section--secondary .section-heading__title,
+.section--secondary .section-heading__subtitle,
+.section--secondary .heading,
+.section--secondary .text {
+  color: var(--color-white);
+}
+
+/* ============================================
+   SECTION OVERLAYS
+   ============================================ */
+
+.section--with-overlay {
+  position: relative;
+}
+
+.section--with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hero-overlay);
+  z-index: 1;
+}
+
+.section--with-overlay > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   RESPONSIVE SECTIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--section-padding-y-sm);
+    padding-bottom: var(--section-padding-y-sm);
+  }
+
+  .section--lg {
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
+  }
+
+  .section--xl {
+    padding-top: var(--spacing-20);
+    padding-bottom: var(--spacing-20);
+  }
+
+  .section-heading {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .section-heading__title::after {
+    width: 60px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+  }
+
+  .section--sm {
+    padding-top: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+
+  .section--lg {
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
+  }
+
+  .section--xl {
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
+  }
+
+  .section-heading {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .section-heading__title::after {
+    width: 50px;
+    height: 3px;
+  }
+}
