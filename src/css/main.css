@@ -1,32 +1,5 @@
-/* ============================================
-   PT VISI AGRO MAKMUR - MAIN STYLESHEET (BUNDLED)
-   Modern, Premium Corporate Website
 
-   WHY THIS FILE IS A SINGLE BUNDLE:
-   This used to be a thin file made of ~20 chained @import statements
-   pulling in base/layout/component/page partials. @import is
-   render-blocking and sequential: the browser must download this file,
-   parse it, discover the first @import, fetch it, parse THAT for more
-   @imports, etc. That serializes ~20 round-trips before first paint
-   (worse than useless over file://, where @import silently fails
-   cross-origin, meaning the entire site rendered unstyled if this page
-   was ever opened by double-clicking it instead of via a web server).
-   Bundling into one physical file removes the waterfall and the file://
-   failure mode, mirroring the same fix already applied to src/js/app.js.
-   The partial files under base/, layout/, components/, and pages/ remain
-   as the source of truth for future edits — re-run the bundler (see
-   README.md) after changing them, or edit this file directly and port
-   the change back.
-   ============================================ */
 
-/* ============================================
-   PT VISI AGRO MAKMUR - MAIN STYLESHEET
-   Modern, Premium Corporate Website
-   ============================================ */
-
-/* ============================================
-   BASE STYLES
-   ============================================ */
 
 /* ============================================
    PT VISI AGRO MAKMUR - DESIGN SYSTEM
@@ -2138,7 +2111,6 @@ img {
 
 /* Contain Layout for Performance */
 .hero-content,
-.navbar .container,
 .section {
   contain: layout style paint;
 }
@@ -2218,7 +2190,6 @@ img[loading="lazy"] {
   
   /* Reduce contain complexity on mobile */
   .hero-content,
-  .navbar .container,
   .section {
     contain: layout;
   }
@@ -3973,6 +3944,10 @@ img[loading="lazy"] {
   box-shadow: var(--shadow-md);
 }
 
+.navbar:has(.nav-menu.show) {
+  z-index: calc(var(--z-index-modal) + 1);
+}
+
 .navbar .container {
   display: flex;
   justify-content: space-between;
@@ -4073,6 +4048,11 @@ img[loading="lazy"] {
   touch-action: manipulation;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  transition: z-index 0s;
+}
+
+.menu-toggle.active {
+  z-index: var(--z-index-modal);
 }
 
 .menu-toggle:focus {
@@ -4126,11 +4106,13 @@ img[loading="lazy"] {
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-normal) var(--transition-timing);
+  pointer-events: none;
 }
 
 .backdrop.show {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* Responsive Navigation */
@@ -4150,6 +4132,7 @@ img[loading="lazy"] {
     z-index: var(--z-index-modal);
     transition: right var(--transition-normal) var(--transition-timing);
     padding: calc(var(--nav-height) + var(--spacing-4)) var(--spacing-6) var(--spacing-6);
+    pointer-events: auto;
   }
 
   .nav-menu.show {
@@ -4159,11 +4142,13 @@ img[loading="lazy"] {
   .nav-links {
     flex-direction: column;
     gap: var(--spacing-4);
+    pointer-events: auto;
   }
 
   .nav-link {
     font-size: var(--font-size-lg);
     padding: var(--spacing-3) 0;
+    pointer-events: auto;
   }
 
   .navbar__logo img {
@@ -4193,6 +4178,7 @@ img[loading="lazy"] {
     z-index: var(--z-index-modal);
     transition: right var(--transition-normal) var(--transition-timing);
     padding: calc(var(--nav-height) + var(--spacing-4)) var(--spacing-6) var(--spacing-6);
+    pointer-events: auto;
   }
 
   .nav-menu.show {
@@ -4202,11 +4188,13 @@ img[loading="lazy"] {
   .nav-links {
     flex-direction: column;
     gap: var(--spacing-4);
+    pointer-events: auto;
   }
 
   .nav-link {
     font-size: var(--font-size-lg);
     padding: var(--spacing-3) 0;
+    pointer-events: auto;
   }
 
   .navbar__logo img {

@@ -1,19 +1,4 @@
-/* ============================================
-   PT VISI AGRO MAKMUR — APPLICATION SCRIPT
-   Single bundled file (no ES "import/export").
 
-   WHY THIS FILE EXISTS:
-   The site used to be split into ES modules (`type="module"`) that
-   imported each other. That only works when the page is served over
-   http(s) — browsers refuse to load ES modules over the `file://`
-   protocol (a CORS restriction), so if this site was ever opened by
-   double-clicking index.html instead of through a web server, EVERY
-   script silently failed to run at all: the mobile hamburger menu did
-   nothing, the loading screen never went away, and the hero photo never
-   appeared. Bundling everything into one plain script tag (no import/
-   export) removes that whole failure mode — it now works identically
-   whether the page is opened directly from disk or hosted online.
-   ============================================ */
 (function () {
   'use strict';
 
@@ -85,7 +70,6 @@
 
     if (this.menuToggle) {
       this.menuToggle.addEventListener('click', function (e) {
-        e.preventDefault();
         self.toggleMobileMenu();
       });
     }
@@ -122,7 +106,10 @@
     var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     if (scrollbarWidth > 0) document.body.style.paddingRight = scrollbarWidth + 'px';
 
-    if (this.menuToggle) this.menuToggle.setAttribute('aria-expanded', 'true');
+    if (this.menuToggle) {
+      this.menuToggle.setAttribute('aria-expanded', 'true');
+      this.menuToggle.focus();
+    }
   };
 
   Navigation.prototype.closeMobileMenu = function () {
