@@ -84,7 +84,10 @@
     var self = this;
 
     if (this.menuToggle) {
-      this.menuToggle.addEventListener('click', function () { self.toggleMobileMenu(); });
+      this.menuToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        self.toggleMobileMenu();
+      });
     }
     if (this.backdrop) {
       this.backdrop.addEventListener('click', function () { self.closeMobileMenu(); });

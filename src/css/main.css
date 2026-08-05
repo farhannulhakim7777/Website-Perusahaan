@@ -4071,6 +4071,22 @@ img[loading="lazy"] {
   box-shadow: var(--shadow-sm);
   pointer-events: auto;
   touch-action: manipulation;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-toggle:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .menu-toggle span {
@@ -4817,10 +4833,15 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .hero-stats {
+    display: none;
+  }
+
   .hero-section {
     padding-top: var(--spacing-10);
     padding-top: clamp(var(--spacing-8), 12vh, var(--spacing-12));
-    padding-bottom: 0;
+    padding-bottom: var(--spacing-20);
+    min-height: 100vh;
   }
 
   .hero-content {
