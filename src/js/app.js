@@ -5,9 +5,9 @@
   /* ---------- CONFIG ---------- */
   var config = {
     contact: {
-      whatsapp: '628380635439',
+      whatsapp: '6283806935439',
       email: 'info@visiagromakmur.com',
-      phone: '+62 838 0635 439',
+      phone: '+62 838 0693 5439',
       address: 'Jl. Raya Villa Regensi II Blok Fb 1 No.14, Kuta Jaya, Pasar Kemis, Tangerang',
       mapUrl: 'https://www.google.com/maps?q=Jl.%20Raya%20Villa%20Regensi%20II%20Blok%20Fb%201%20No.14,%20Pasar%20Kemis,%20Tangerang'
     },
@@ -331,7 +331,6 @@
       e.preventDefault();
 
       var nama = document.getElementById('contactNama').value.trim();
-      var email = document.getElementById('contactEmail').value.trim() || 'Tidak diisi';
       var telepon = document.getElementById('contactTelepon').value.trim() || 'Tidak diisi';
       var pesan = document.getElementById('contactPesan').value.trim();
 
@@ -355,7 +354,7 @@
          corrupt the wa.me URL or get silently dropped by WhatsApp, so the
          business could receive a truncated or malformed message. */
       var messageBody = 'Halo Admin PT Visi Agro Makmur,\n\nSaya ingin menghubungi Anda:\n\n' +
-        'Nama: ' + nama + '\nEmail: ' + email + '\nTelepon: ' + telepon +
+        'Nama: ' + nama + '\nTelepon: ' + telepon +
         '\n\nPesan:\n' + pesan;
 
       var whatsappUrl = 'https://wa.me/' + config.contact.whatsapp + '?text=' + encodeURIComponent(messageBody);
