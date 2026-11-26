@@ -2,6 +2,9 @@
 (function () {
   'use strict';
 
+  // Enable progressive enhancement for animations
+  document.documentElement.classList.add('js-enabled');
+
   /* ---------- CONFIG ---------- */
   var config = {
     contact: {

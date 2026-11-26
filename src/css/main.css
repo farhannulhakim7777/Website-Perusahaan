@@ -5943,29 +5943,50 @@ body {
   }
 }
 
-/* Scroll reveal animations */
+/* Scroll reveal animations - progressive enhancement */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal--left {
-  opacity: 0;
-  transform: translateX(-30px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal--right {
-  opacity: 0;
-  transform: translateX(30px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal--scale {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Only animate when JS adds .active class */
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-enabled .reveal--left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.js-enabled .reveal--right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.js-enabled .reveal--scale {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active,
@@ -5978,9 +5999,14 @@ body {
 
 /* Staggered animations for lists */
 .reveal-stagger > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.js-enabled .reveal-stagger > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .reveal-stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
