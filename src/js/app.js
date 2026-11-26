@@ -53,7 +53,7 @@
   function Navigation() {
     this.navbar = document.querySelector('.navbar');
     this.menuToggle = document.getElementById('menu-toggle');
-    this.navLinks = document.getElementById('nav-links');
+    this.navMenu = document.getElementById('nav-menu');
     this.backdrop = document.getElementById('backdrop');
     this.isOpen = false;
     this.init();
@@ -76,8 +76,8 @@
     if (this.backdrop) {
       this.backdrop.addEventListener('click', function () { self.closeMobileMenu(); });
     }
-    if (this.navLinks) {
-      this.navLinks.addEventListener('click', function (e) { self.handleNavClick(e); });
+    if (this.navMenu) {
+      this.navMenu.addEventListener('click', function (e) { self.handleNavClick(e); });
     }
 
     var debouncedScroll = debounce(function () { self.handleScroll(); }, config.animation.navbarScrollThreshold);
@@ -98,7 +98,7 @@
 
   Navigation.prototype.openMobileMenu = function () {
     this.isOpen = true;
-    addClass(this.navLinks, 'show');
+    addClass(this.navMenu, 'show');
     addClass(this.backdrop, 'show');
     addClass(this.menuToggle, 'active');
     document.body.style.overflow = 'hidden';
@@ -114,7 +114,7 @@
 
   Navigation.prototype.closeMobileMenu = function () {
     this.isOpen = false;
-    removeClass(this.navLinks, 'show');
+    removeClass(this.navMenu, 'show');
     removeClass(this.backdrop, 'show');
     removeClass(this.menuToggle, 'active');
     document.body.style.overflow = '';
