@@ -103,6 +103,7 @@
 
   Navigation.prototype.openMobileMenu = function () {
     this.isOpen = true;
+    addClass(this.navbar, 'menu-open');
     addClass(this.navMenu, 'show');
     addClass(this.backdrop, 'show');
     addClass(this.menuToggle, 'active');
@@ -119,6 +120,7 @@
 
   Navigation.prototype.closeMobileMenu = function () {
     this.isOpen = false;
+    removeClass(this.navbar, 'menu-open');
     removeClass(this.navMenu, 'show');
     removeClass(this.backdrop, 'show');
     removeClass(this.menuToggle, 'active');
@@ -445,7 +447,8 @@
     };
 
     img.src = imageUrl;
-    heroSection.classList.add('bg-loaded');
+    // NOTE: bg-loaded hanya ditambah di dalam onload/onerror,
+    // bukan di sini, agar CSS variable sudah di-set sebelum opacity dinaikkan.
   };
 
   App.prototype.showNotification = function (message, type) {
