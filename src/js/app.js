@@ -59,6 +59,8 @@
     this.navMenu = document.getElementById('nav-menu');
     this.backdrop = document.getElementById('backdrop');
     this.isOpen = false;
+    // Capture navigation links container for later active state updates
+    this.navLinks = this.navbar ? this.navbar.querySelector('.nav-links') : null;
     this.init();
   }
 
@@ -151,6 +153,7 @@
   };
 
   Navigation.prototype.updateActiveNavigation = function (currentSection) {
+    if (!this.navLinks) return;
     var links = this.navLinks.querySelectorAll('a');
     links.forEach(function (link) {
       removeClass(link, 'active');
@@ -159,6 +162,7 @@
   };
 
   Navigation.prototype.updateScrollSpy = function () {
+    if (!this.navLinks) return;
     var sections = document.querySelectorAll('section[id]');
     var links = this.navLinks.querySelectorAll('a');
     var current = '';
