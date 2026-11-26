@@ -4795,7 +4795,8 @@ footer {
   }
 
   .hero-actions--secondary {
-    display: none;
+    display: block; /* tampilkan tombol "Lihat Produk" di mobile */
+    width: 100%;
   }
 
   .hero-stats {
@@ -4822,7 +4823,8 @@ footer {
 
 @media (max-width: 480px) {
   .hero-stats {
-    display: none;
+    display: grid; /* tampilkan statistik di layar kecil */
+    padding: var(--spacing-6) 0 var(--spacing-10);
   }
 
   .hero-section {
